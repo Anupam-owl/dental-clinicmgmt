@@ -1,0 +1,249 @@
+{% include 'base.html'%}
+{%load static %}
+{% include 'navigation.html'%}
+
+{% block content %}
+
+  
+<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-slider" data-slide-to="1"></li>
+        <li data-target="#carousel-slider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'Images/1.jpg'%}" 
+            style ="height: 300px; width: 100%;" >
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2>Focus on Care & Results</h2>
+                    <p>We provide expert, compassionate dental care tailored to your needs.
+                        Helping you achieve and maintain a healthy, confident smile for life.
+                    </p>
+                    <button class="btn btn-light"><a href="#departments" class="nav-link">See All Services</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'Images/2.jpg'%}" 
+            style ="height: 500px; width: 100%;" >
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2>Focus on Comfort & Modernity</h2>
+                    <p>Experience gentle, state-of-the-art dentistry in a comfortable environment.
+                        We prioritize your well-being while crafting beautiful, lasting smiles.
+                    </p>
+                    <button class="btn btn-light"><a href="#departments" class="nav-link">See All Services</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'Images/3.jpg'%}" 
+            style ="height: 500px; width: 100%;" >
+            <div class="carousel-caption text-white">
+                <div class="background-1">
+                    <h2 style ="color:red;">Focus on Family & Health</h2>
+                    <p style ="color:green;">
+                        Your dedicated partner for comprehensive family dental health and wellness.
+We build trusting relationships through exceptional care for all ages.
+                    </p>
+                    <button class="btn btn-light"><a href="#departments" class="nav-link">See All Services</a></button>
+                </div>
+
+                <!------
+                <div class="background-2">
+
+                </div>
+
+                -->
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="Images/root_canal.jpg" alt=""
+                style="margin-left: auto; margin-right: auto; width: 50%; padding-top: 5px;">
+        </div>
+        <div class="col-md-4" id="intro-text">
+            <h1 class="text-center">
+                <h1 class="text-center">Welcome to Dental Clinic </h1>
+            </h1>
+            <p class="text-justify" color='red'>
+            <h5 >A Dental Clinic Management System is a specialized system designed to efficiently manage all 
+                aspects of patient care and clinic operations for a dental practice,
+                 like one located at Anamnagar.
+                Instead of general hospital services, this system focuses specifically 
+                on facilitating various dental services. It helps patients schedule appointments, manage their records, and access treatments.</h5>
+            </p>
+            <img src="{% static 'Images/root_canal.jpg' %}" alt=""
+                style="margin-left: auto; margin-right: auto; width: 50%; padding-top: 5px;">
+            <p class="text-justify">
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid">
+                <br>
+                <button class="btn btn-lg btn-block"><a href="{% url 'form_appointment'%}" class="nav-link"><i
+                            class="fa fa-calendar-minus-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;Request
+                        Appointments</a></button>
+                <br>
+                <button class="btn btn-lg btn-block"><a href="#doctors" class="nav-link"><i
+                            class="fa fa-user-md"></i>&nbsp;&nbsp;&nbsp;&nbsp;Find
+                        Doctors</a></button>
+                <br>
+
+                 <button class="btn btn-lg btn-block"><a href="https://www.google.com/search?gs_ssp=eJzj4tZP1zcsM04pzMpLNmD04kxKzEstzijPLwIAXmEIEg&q=baneshwor&oq=banesh&gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyBggAEEUYOTIHCAEQLhiABDINCAIQLhivARjHARiABDIHCAMQABiABDINCAQQLhivARjHARiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDINCAgQLhivARjHARiABNIBCDc4ODBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#vhid=0x0:0x5289062a9e5ff169&vssid=lclsmap&eim=CAEQEBoSMjcuNjg5NjE2OTIzNjI5OTE3IhE4NS4zMzk1NjU1MDcyNTAwMyoTNTk0NzI5MTU2MzAzNDkzMTU2MQ" class="nav-link"><i
+                            class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;&nbsp;Location</a></button> 
+                <br>
+                <button class="btn btn-lg btn-block"><a href="{% url 'contact'%}" class="nav-link"><i
+                            class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;&nbsp;Emergency
+                        Contact</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--------------Medical Services -------------------->
+<div class="container-fluid" id="departments">
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="text-center text-primary">Departments</h4>
+        <h1 class="text-center">Medical services</h1>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row owl-carousel owl-theme">
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="card-img">
+            <img src="{% static 'Images/diagonostic.jpg' %}" alt=""
+                style="margin-left: auto; margin-right: auto; width: 25%; padding-top: 5px;">
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Diagnostic Services</p>
+        </div>
+    </div>
+
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="{% static 'Images/preventive.jpg' %}">
+            <img src="icons/icons8-x-ray-48.png"
+                style="margin-left: auto; margin-right: auto; width: 25%; padding-top: 5px;">
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Preventive Care</p>
+        </div>
+    </div>
+
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="{% static 'Images/restorative.jpg' %}">
+            <img src="icons/ "
+                style="margin-left: auto; margin-right: auto; width: 25%; padding-top: 5px;">
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Restorative Dentistry</p>
+        </div>
+    </div>
+
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="card-img">
+            <img src="{% static 'Images/cosmetic.jpg' %}"
+                style="margin-left: auto; margin-right: auto; width: 25%; padding-top: 5px;">
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Cosmetic Dentistry</p>
+        </div>
+    </div>
+
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="card-img">
+            <img src=" {% static 'Images/special.png' %} "
+                style="margin-left: auto; margin-right: auto; width: 25%; padding-top: 5px;">
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Specialized Procedures</p>
+        </div>
+    </div>
+
+    
+
+    
+</div>
+</div>
+
+<!----------------------Medical Services End--------------->
+
+
+
+<!-----------------------------Other Services Section Beginning-------------------->
+<div class="container-fluid" id="services">
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">Other Services</h1>
+    </div>
+</div>
+
+
+<div class="row owl-carousel owl-theme">
+    <div class="card shadow text-center items" justify-content-center object-fit: cover; style="height: 159px;">
+        <div class="card-img">
+            <img src="{% static 'Images/p.jpg' %}" alt="" style="margin-left: auto; margin-right: auto; width: 50%;">
+        </div>
+        <div class="card-body">
+            <p class="card-text">Pharmacy</p>
+        </div>
+    </div>
+
+    
+    <div class="card shadow text-center items" style="height: 159px;">
+        <div class="card-img">
+            <img src="{% static 'Images/lab.jpg' %}" alt="" style="margin-left: auto; margin-right: auto; width: 25%;">
+        </div>
+        <div class="card-body">
+            <p class="card-text">Laboratory</p>
+        </div>
+    </div>
+
+    <div class="card shadow text-center items">
+        <div class="card-img">
+            <img src="{% static 'Images/ambulance.jpg' %}" alt="" style="margin-left: auto; margin-right: auto; width: 25%;">
+        </div>
+        <div class="card-body">
+            <p class="card-text">Ambulance</p>
+        </div>
+    </div>
+</div>
+
+        
+
+        
+</div>   
+    
+{% endblock content %}
+
+    
+{% include 'footer.html'%}
+

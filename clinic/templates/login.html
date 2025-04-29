@@ -1,0 +1,82 @@
+{% comment %} {% include 'base.html'%}
+{% include 'navigation.html'%}
+{% block content %}
+
+{% ifequal error == "no" %}
+<script>
+    alert('logged in successfully');
+    window.location = "{% url 'home' %}";
+</script>
+{% endif %}
+{% ifequal error == "yes" %}
+<script>
+    alert('invalid login try again');
+</script>
+{% endif %}
+
+<div class="container">
+    <h2 class="text-center">Admin Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Admin Name</label>
+        <input type="text" class="form-control" name="uname" />
+        <label>Password</label>
+        <input type="password" class="form-control" name="pwd" />
+
+        <input type="submit" value="Login" class="form-control btn btn-primary" />
+    </form>
+</div>
+
+{% endblock content %}
+{% include 'footer.html' %} {% endcomment %}
+
+{% include 'base.html'%}
+{% include 'navigation.html'%}
+{% block content %}
+
+{# Corrected line 5: Changed 'ifequal error == "no"' to 'if error == "no"' #}
+{% if error == "no" %} 
+<script>
+    alert('logged in successfully');
+    // Reminder: It's better practice to redirect from the view, not here.
+    window.location = "{% url 'index' %}"; 
+</script>
+{% endif %}
+
+{# Corrected line 11: Changed 'ifequal error == "yes"' to 'if error == "yes"' #}
+{% if error == "yes" %} 
+<script>
+    // Reminder: It's better to show errors in HTML or use messages framework.
+    alert('invalid login try again');
+</script>
+{% endif %}
+
+{# Make sure the rest of your form is here #}
+<div class="container">
+    <h2 class="text-center">Admin Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Admin Name</label>
+        <input type="text" class="form-control" name="uname" />
+        <label>Password</label>
+        <input type="password" class="form-control" name="pwd" />
+        <input type="submit" value="Login" class="form-control btn btn-primary" />
+    </form>
+</div>
+
+{# Recommended: Use Django messages or a context variable for errors #}
+{% if error_message %} 
+    <div class="alert alert-danger" role="alert" style="margin-top: 15px;">
+        {{ error_message }}
+    </div>
+{% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert" style="margin-top: 15px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+{% endblock content %} {# Make sure you have the endblock tag #}

@@ -1,0 +1,234 @@
+/* Basic Reset & Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Lighter grey background */
+    color: #343a40;
+    line-height: 1.6;
+}
+
+/* Main container below the navbar */
+.dashboard-container {
+    padding: 25px;
+    max-width: 1300px;
+    margin: 20px auto; /* Space below navbar and center */
+}
+
+.dashboard-container h1 {
+    color: #495057;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+/* KPI Grid */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.kpi-icon { /* Optional icon styling */
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.kpi-value {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #007bff; /* Primary color for the number */
+    margin-bottom: 5px;
+}
+
+.kpi-label {
+    font-size: 0.95em;
+    color: #6c757d; /* Secondary text color */
+    font-weight: 500;
+}
+
+/* Grid layout for main dashboard cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Card Styling (Refined) */
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent content overflow issues */
+}
+
+.card-title {
+    color: #343a40;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f8f9fa; /* Slightly different header background */
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    font-size: 0.9em;
+}
+
+.card-content p {
+    color: #6c757d;
+    margin-top: 0;
+}
+
+/* Data List Styling (for Doctor Counts, Recent Patients) */
+.data-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data-list li:last-child {
+    border-bottom: none;
+}
+
+.list-label {
+    color: #495057;
+    margin-right: 10px;
+}
+
+.list-value {
+    font-weight: 600;
+    color: #007bff;
+    background-color: #e7f3ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.simple-list li {
+    justify-content: flex-start; /* Align left for simple lists */
+    color: #495057;
+}
+.subtle-info {
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 8px;
+}
+
+
+/* Compact Table Styling (for Upcoming Appointments) */
+.compact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.compact-table th, .compact-table td {
+    text-align: left;
+    padding: 8px 5px; /* Reduced padding */
+    border-bottom: 1px solid #eee;
+    font-size: 0.85em; /* Smaller font */
+    vertical-align: middle;
+}
+
+.compact-table thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.compact-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Action buttons/links */
+.card-actions {
+    margin-top: auto; /* Push to bottom */
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+     .kpi-value { font-size: 2em; }
+     .kpi-label { font-size: 0.9em; }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+        gap: 20px;
+    }
+     .dashboard-container h1 { font-size: 1.5em; }
+}
+
+@media (max-width: 480px) {
+     .kpi-grid {
+        grid-template-columns: 1fr 1fr; /* Two KPIs per row */
+     }
+      .kpi-card { padding: 15px; }
+      .kpi-value { font-size: 1.8em; }
+      .kpi-label { font-size: 0.85em; }
+
+     .dashboard-container { padding: 15px; }
+     .card-title { padding: 12px 15px; font-size: 1em;}
+     .card-content { padding: 15px; }
+}

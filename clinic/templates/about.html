@@ -1,0 +1,101 @@
+{% include 'base.html'%}
+{% include 'navigation.html'%}
+
+{% block content %}
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Smile Dental Clinic</title>
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .dental-bg {
+                background-color: #e6f7ff;
+            }
+            .dental-primary {
+                color: #2a9df4;
+            }
+            .team-img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid #2a9df4;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Simple Navbar -->
+                <!-- Hero Section -->
+        <section class="dental-bg py-5">
+            <div class="container text-center py-4">
+                <h1 class="dental-primary fw-bold">About Our Clinic</h1>
+                <p class="lead">Providing quality dental care since 2010</p>
+            </div>
+        </section>
+    
+        <!-- About Content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4">
+                        <img src="https://images.pexels.com/photos/6812561/pexels-photo-6812561.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                             alt="Dental Clinic" class="img-fluid rounded">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Our Story</h2>
+                        <p>Founded in 2010, Smile Dental Clinic has been serving our community with compassionate dental care. We believe everyone deserves a healthy, beautiful smile.</p>
+                        <p>Our team of experienced dentists and hygienists are dedicated to providing personalized care in a comfortable environment.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check dental-primary me-2"></i> Modern dental equipment</li>
+                            <li class="mb-2"><i class="fas fa-check dental-primary me-2"></i> Friendly, professional staff</li>
+                            <li class="mb-2"><i class="fas fa-check dental-primary me-2"></i> Affordable treatment options</li>
+                            <li><i class="fas fa-check dental-primary me-2"></i> Emergency services available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Team Section -->
+        <section class="dental-bg py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5">Meet Our Dentists</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Dr. Sarah" class="team-img mb-3">
+                        <h4>Dr. Sarah Johnson</h4>
+                        <p class="text-muted">General Dentist</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                             alt="Dr. Michael" class="team-img mb-3">
+                        <h4>Dr. Michael Chen</h4>
+                        <p class="text-muted">Orthodontist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- CTA -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container text-center">
+                <h3 class="mb-4">Ready for your dental visit?</h3>
+                <a href="contact.html" class="btn btn-light btn-lg">Book Appointment</a>
+            </div>
+        </section>
+    
+        {% include 'footer.html'%}
+    
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
+{% endblock content %}

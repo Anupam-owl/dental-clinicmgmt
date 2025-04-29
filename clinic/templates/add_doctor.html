@@ -1,0 +1,55 @@
+{% include 'base.html'%}
+{%load static %}
+{% include 'navigation.html'%}
+{% block content %}
+{% if error == "no" %} 
+<script>
+    alert('Record save successfully');
+    // Reminder: It's better practice to redirect from the view, not here.
+    window.location = "{% url 'view_doctor' %}"; 
+</script>
+{% endif %}
+
+{# Corrected line 11: Changed 'ifequal error == "yes"' to 'if error == "yes"' #}
+{% if error == "yes" %} 
+<script>
+    // Reminder: It's better to show errors in HTML or use messages framework.
+    alert('invalid Record');
+</script>
+{% endif %}
+
+{# Make sure the rest of your form is here #}
+<div class="container">
+    <h2 class="text-center">Add Doctor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Doctor Name</label>
+        <input type="text" class="form-control" name="name" />
+        <label>Specialization</label>
+        <input type="text" class="form-control" name="specialization" />
+        <label>Mobile</label>
+        <input type="int" class="form-control" name="mobile" />
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" />
+        <input type="submit" value="submit" class="form-control btn btn-primary" />
+    </form>
+</div>
+
+{# Recommended: Use Django messages or a context variable for errors #}
+{% if error_message %} 
+    <div class="alert alert-danger" role="alert" style="margin-top: 15px;">
+        {{ error_message }}
+    </div>
+{% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert" style="margin-top: 15px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+
+
+{% endblock %}
